@@ -5,14 +5,24 @@ import Search from './components/Search';
 import Users from './components/Users';
 
 class App extends Component {
+  state = {
+    users: []
+  }
+
+  addNewUser = userInfo =>{
+    this.setState(prevState => ({
+      users: prevState.users.concat(userInfo)
+    }))
+  }
+
   render() {
     return (
       <div>
         <Header />
         <div className="container">
-          <Search />
+          <Search onSubmit={this.addNewUser}/>
           <br />
-          <Users />
+          <Users users={this.state.users}/>
         </div>
       </div>
     );
