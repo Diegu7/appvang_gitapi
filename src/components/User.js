@@ -19,7 +19,7 @@ const User = props => {
                     </p>
                   </Media.Body>
                 </Media>
-                <Button>Delete</Button>
+                <Button onClick={props.removeUser}>Delete</Button>
               </Panel.Body>
             </Panel>
           </Col>

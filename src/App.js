@@ -15,6 +15,13 @@ class App extends Component {
     }))
   }
 
+  removeUser = userInfo =>{
+    let index = this.users.indexOf(userInfo);
+    this.setState(prevState => ({
+      users: prevState.users.splice(index, 1)
+    }))
+  }
+
   render() {
     return (
       <div>
@@ -22,7 +29,7 @@ class App extends Component {
         <div className="container">
           <Search onSubmit={this.addNewUser}/>
           <br />
-          <Users users={this.state.users}/>
+          <Users users={this.state.users} removeUser={this.removeUser}/>
         </div>
       </div>
     );

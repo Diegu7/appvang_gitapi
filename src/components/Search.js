@@ -28,7 +28,6 @@ class Search extends React.Component {
 		    </Form>
 		)
 	}
-  
 }
 
 export default Search;
